@@ -1,0 +1,18 @@
+[
+  "清单格式不受支持：{error}",
+  "工作目录不存在：{error}",
+  "删除未完成：{error}。服务登记已保留，可重试。",
+  "无法检查端口 {port}（{address}）：{error}",
+  "端口 {port} 已被占用{detail}。请先停止占用进程，或修改此服务的端口后再启动。",
+  "启动失败（{exit}）：{error}",
+  "服务意外退出（{exit}）。请查看运行日志中的具体错误。",
+  "不支持的占位符：${key}",
+  "服务配置损坏，未覆盖原文件：{error}",
+  "操作已取消：{error}",
+  "无法执行命令：{error}",
+  "{label}失败（{exit}），请查看日志",
+  "安装步骤 {step}/{total}",
+  "准备 Python {version} 独立环境",
+  "安装 MinerU {version} 与固定依赖",
+  "响应不是预期的 MinerU {version} API"
+]

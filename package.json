@@ -1,6 +1,6 @@
 {
   "name": "flint-launcher",
-  "version": "0.1.9",
+  "version": "0.1.12",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "tauri": "tauri",
     "desktop": "tauri dev",
     "package": "tauri build --bundles app -- --locked",
-    "test": "cargo test --locked --manifest-path src-tauri/Cargo.toml -- --test-threads=1",
+    "test": "npm run test:i18n && cargo test --locked --manifest-path src-tauri/Cargo.toml -- --test-threads=1",
     "format": "prettier --write src vite.config.ts",
     "prepare:runtime": "python3 scripts/prepare-runtime.py",
     "notices": "python3 scripts/generate-notices.py",
@@ -17,7 +17,8 @@
     "pretest": "npm run prepare:runtime",
     "prepackage": "npm run check:version",
     "release:mac": "python3 scripts/release-macos.py",
-    "manifest:check": "cargo run --quiet --locked --manifest-path src-tauri/Cargo.toml --bin flint-manifest -- check"
+    "manifest:check": "cargo run --quiet --locked --manifest-path src-tauri/Cargo.toml --bin flint-manifest -- check",
+    "test:i18n": "node scripts/test-i18n.mjs"
   },
   "dependencies": {
     "@tauri-apps/api": "2.12.4",
@@ -27,10 +28,12 @@
     "react-dom": "19.3.1"
   },
   "devDependencies": {
+    "@babel/parser": "7.29.12",
     "@tauri-apps/cli": "2.12.4",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "4.7.0",
+    "esbuild": "0.25.12",
     "prettier": "3.6.2",
     "typescript": "7.0.2",
     "vite": "6.4.5"

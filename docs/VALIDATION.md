@@ -45,3 +45,23 @@ Intel、Windows、Linux、全部 macOS 版本/芯片、所有 MinerU 档位与�
 新增 0.2 解析和拒绝路径、安装失败/取消、配置持久化、改端口与特殊参数不执行 shell 的回归测试。Node 与 Python/uv 示例在临时目录通过真实安装、首页 HTTP 200、两次不同端口启动和停止释放端口验证；Python 测试使用固定 bundled uv 和本机 Python，离线执行，未测试自动下载 Python。JSON Schema 自身、三个示例及文档中的完整清单经 Draft 2020-12 校验。仍只在 macOS Apple Silicon 执行，未宣称 Windows/Linux 实测通过。
 
 本轮 4 项单元测试 + 22 项生命周期集成测试全部通过。Flint 0.1.9 的 macOS DMG/ZIP 和签名校验通过，已更新 Applications；原生界面导入 Node 清单后正确显示应用身份、安装命令与结构化运行预览，取消后没有添加示例到用户登记。
+
+## 0.1.10 中英文界面（2026-10-30）
+
+27 项 Rust 测试通过（5 项单元、22 项生命周期），包括语言偏好的系统回退、显式选择、重启读取、无效值拒绝和写入失败时内存/磁盘一致性。翻译检查覆盖 263 组中英文资源的键与占位符、UI 引用、市场内容、嵌套错误与未知诊断保留。TypeScript 和 macOS 正式构建、签名、DMG 校验通过。
+
+Applications 安装版实际验证：默认跟随系统为英文，中文/English 即时切换，主窗口和菜单栏面板同步；显式 English 退出重启后保留。最终切回简体中文，原有 MinerU 保持停止。英文设置截图检查后修正品牌标记被长副标题挤压的问题，同时验证文档标题随语言切换。系统文件选择器仍遵循 macOS 语言。
+
+## 0.1.11 — 2026-10-30
+
+- 移除顶部不存在总览页的 Workspace / 工作空间层级，保留动态服务和页面名称。
+- `npm run test:i18n`、`npm run build`、`npm run check:version` 通过。
+- macOS arm64 DMG / ZIP 打包、签名验证通过；已更新 `/Applications/Flint.app`。
+- 原生界面确认顶部只显示 MinerU 4.0.12；服务保持已停止，未启动解析任务。
+
+## 0.1.12 — 2026-10-30
+
+- 精简品牌标语、侧栏宣传语、页面装饰标签与重复提示；保留功能说明。
+- 中英文资源检查（264 项）、TypeScript / Vite 构建、版本一致性检查通过。
+- macOS arm64 DMG / ZIP 打包与签名检查通过，Applications 已更新。
+- 实际界面检查服务详情、市场与设置；Logo 无副标题，页面保留必要状态与操作信息。MinerU 保持停止。

@@ -1,5 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use launcher_core::engine::{Config, Engine, RemovalOptions, RemovalPreview, View};
+use launcher_core::preferences::{self, Language, PreferenceStore, Preferences};
 use std::{
     path::PathBuf,
     sync::{
@@ -10,8 +11,54 @@ use std::{
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
-    Manager, State,
+    Emitter, Manager, State,
 };
+
+struct NativeMenu {
+    show: MenuItem<tauri::Wry>,
+    quit: MenuItem<tauri::Wry>,
+}
+fn update_language(app: &tauri::AppHandle, prefs: &Preferences) -> Result<(), String> {
+    let menu = app.state::<NativeMenu>();
+    menu.show
+        .set_text(preferences::text(&prefs.locale, "打开 Flint"))
+        .map_err(|e| e.to_string())?;
+    menu.quit
+        .set_text(preferences::text(&prefs.locale, "停止服务并退出"))
+        .map_err(|e| e.to_string())?;
+    if let Some(tray) = app.tray_by_id("flint") {
+        tray.set_tooltip(Some(preferences::text(&prefs.locale, "Flint · 本地服务")))
+            .map_err(|e| e.to_string())?;
+    }
+    if let Some(window) = app.get_webview_window("main") {
+        window
+            .set_title(&preferences::text(&prefs.locale, "Flint · 本地服务"))
+            .map_err(|e| e.to_string())?;
+    }
+    app.emit("preferences-changed", prefs)
+        .map_err(|e| e.to_string())
+}
+#[tauri::command]
+fn get_preferences(
+    app: tauri::AppHandle,
+    store: State<PreferenceStore>,
+    system_locale: String,
+) -> Result<Preferences, String> {
+    let prefs = store.set(None, &system_locale)?;
+    update_language(&app, &prefs)?;
+    Ok(prefs)
+}
+#[tauri::command]
+fn set_language(
+    app: tauri::AppHandle,
+    store: State<PreferenceStore>,
+    language: Language,
+    system_locale: String,
+) -> Result<Preferences, String> {
+    let prefs = store.set(Some(language), &system_locale)?;
+    update_language(&app, &prefs)?;
+    Ok(prefs)
+}
 
 #[tauri::command]
 fn snapshot(engine: State<Engine>) -> serde_json::Value {
@@ -140,6 +187,9 @@ fn main() {
                 .map(PathBuf::from)
                 .unwrap_or(app.path().app_data_dir()?);
             let uv = app.path().resource_dir()?.join("resources/uv");
+            let store = PreferenceStore::new(root.clone()).map_err(std::io::Error::other)?;
+            let initial = store.get();
+            app.manage(store);
             let engine = Engine::new(root, uv).map_err(std::io::Error::other)?;
             app.manage(engine);
             let tray_window = tauri::WebviewWindowBuilder::new(
@@ -161,19 +211,28 @@ fn main() {
                     let _ = tw.hide();
                 }
             });
-            let menu = Menu::with_items(
+            let show = MenuItem::with_id(
                 app,
-                &[
-                    &MenuItem::with_id(app, "show", "打开 Flint", true, None::<&str>)?,
-                    &MenuItem::with_id(app, "quit", "停止服务并退出", true, None::<&str>)?,
-                ],
+                "show",
+                preferences::text(&initial.locale, "打开 Flint"),
+                true,
+                None::<&str>,
             )?;
+            let quit = MenuItem::with_id(
+                app,
+                "quit",
+                preferences::text(&initial.locale, "停止服务并退出"),
+                true,
+                None::<&str>,
+            )?;
+            let menu = Menu::with_items(app, &[&show, &quit])?;
+            app.manage(NativeMenu { show, quit });
             TrayIconBuilder::with_id("flint")
                 .icon(tauri::image::Image::from_bytes(include_bytes!(
                     "../icons/tray-flint.png"
                 ))?)
                 .icon_as_template(true)
-                .tooltip("Flint · 本地服务")
+                .tooltip(preferences::text(&initial.locale, "Flint · 本地服务"))
                 .menu(&menu)
                 .show_menu_on_left_click(false)
                 .on_menu_event(|app, event| match event.id.as_ref() {
@@ -210,6 +269,8 @@ fn main() {
         })
         .invoke_handler(tauri::generate_handler![
             snapshot,
+            get_preferences,
+            set_language,
             save_service,
             add_release,
             service_action,

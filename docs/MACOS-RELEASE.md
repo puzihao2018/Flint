@@ -10,7 +10,7 @@
 npm ci
 npm test
 npm run release:mac
-cd release/0.1.9
+cd release/0.1.12
 shasum -a 256 -c SHA256SUMS.txt
 ```
 
@@ -27,7 +27,7 @@ shasum -a 256 -c SHA256SUMS.txt
 1. 确认 GitHub 仓库名称、所有者和可见性，推送源码。
 2. 确认 main 的 CI 通过。
 3. 核对 package.json、package-lock.json、Cargo.toml、Cargo.lock 和 tauri.conf.json 的版本一致；更新 CHANGELOG 和 RELEASE-NOTES。
-4. 创建与版本一致的标签，例如 `v0.1.9`，推送标签。
+4. 创建与版本一致的标签，例如 `v0.1.12`，推送标签。
 5. 检查 Release 草稿附件，核验安装包和校验值后发布。
 
 工作流拒绝不匹配的标签，以及覆盖已公开的同名 Release。GitHub 自动生成的源码归档不包含 uv 与模型；构建时按固定校验下载 uv。

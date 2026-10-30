@@ -88,6 +88,7 @@ button:hover:not(:disabled) {
   letter-spacing: -1px;
 }
 .brand-mark {
+  flex-shrink: 0;
   background: #203e35;
   color: #efc36d;
   border-radius: 12px;
@@ -95,15 +96,6 @@ button:hover:not(:disabled) {
   height: 46px;
   display: grid;
   place-items: center;
-}
-.brand small {
-  display: block;
-  font:
-    10px "PingFang SC",
-    sans-serif;
-  letter-spacing: 2px;
-  color: #778379;
-  margin-top: 2px;
 }
 .sidebar > .brand {
   padding: 5px 10px 35px;
@@ -190,25 +182,6 @@ nav button.chosen,
 .sidebar-bottom > button {
   width: 100%;
 }
-.local-note {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 11px;
-  color: #5a6c5e;
-  padding: 20px 10px;
-  border-top: 1px solid #dde2d7;
-  margin-bottom: 8px;
-}
-.local-note > .dot {
-  margin-top: 4px;
-}
-.local-note small {
-  display: block;
-  font-size: 10px;
-  color: #98a08f;
-  margin-top: 5px;
-}
 main {
   flex: 1;
   min-width: 0;
@@ -233,13 +206,6 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 37px 40px;
-}
-.eyebrow {
-  font-size: 9px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  color: #899479;
-  margin-bottom: 10px;
 }
 h1 {
   font-size: 34px;
@@ -267,14 +233,12 @@ h3 {
   margin: 16px 0 28px;
 }
 .service-heading {
+  margin-bottom: 28px;
   display: flex;
   align-items: center;
   gap: 18px;
 }
-.service-heading .eyebrow {
-  margin-bottom: 6px;
-}
-.app-icon {
+.service-heading .app-icon {
   height: 62px;
   width: 62px;
   border-radius: 15px;
@@ -597,6 +561,7 @@ pre {
   color: #46533a;
 }
 .market-card {
+  margin-top: 24px;
   border: 1px solid #e2e5d8;
   border-radius: 13px;
   overflow: hidden;
@@ -619,20 +584,6 @@ pre {
     serif;
   color: #746033;
   letter-spacing: -10px;
-}
-.market-cover > div {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #8d7745;
-}
-.market-cover > div span {
-  display: block;
-  font:
-    18px "Songti SC",
-    serif;
-  letter-spacing: 1px;
-  margin-top: 13px;
-  color: #6d5b35;
 }
 .version-chip {
   position: absolute;
@@ -1018,4 +969,21 @@ textarea {
 }
 .removal-modal .removal-error {
   color: #a25d45;
+}
+
+.language-setting {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.language-setting select {
+  width: auto;
+  min-width: 180px;
+}
+html[lang="en"] .actions {
+  flex-wrap: wrap;
+}
+html[lang="en"] .sidebar {
+  overflow-wrap: anywhere;
 }
