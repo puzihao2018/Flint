@@ -1,0 +1,7 @@
+{
+  "version": "0.12.5",
+  "target": "aarch64-apple-darwin",
+  "url": "https://github.com/astral-sh/uv/releases/download/0.12.5/uv-aarch64-apple-darwin.tar.gz",
+  "archiveSha256": "5bb0e5fe008a773c3dbcb97ff79cd89e1241464fe9d2f986d52ad8f1b037bd62",
+  "binarySha256": "ad3564874e19defa0debefcf48e8381ac1d087c584190c1323c247bd351dd25f"
+}

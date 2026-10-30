@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "0.1",
+  "id": "mineru",
+  "name": "MinerU",
+  "category": "service",
+  "protocol": "http-api",
+  "upstream": "https://github.com/opendatalab/MinerU",
+  "version": "4.1.2",
+  "python": "3.12.12",
+  "recipeVersion": "0.1.0",
+  "description": "将 PDF、扫描文档和图片解析为 Markdown 与结构化内容。独立环境，本地 HTTP API。",
+  "defaultPort": 8000,
+  "healthPath": "/v1/health",
+  "docsPath": "/docs",
+  "support": {
+    "macos-arm64": "validated-on-m5-max",
+    "windows-x64": "unverified",
+    "linux-x64": "unverified"
+  },
+  "validation": {
+    "date": "2026-10-29",
+    "os": "macOS 27.2",
+    "hardware": "Apple M5 Max / 128 GB",
+    "tier": "standard",
+    "modelSource": "huggingface",
+    "api": "4.1 Tasks API",
+    "fixtures": [
+      "one-page text PDF",
+      "one-page scanned PDF"
+    ],
+    "ports": [
+      8000,
+      3000
+    ]
+  },
+  "releases": [
+    {
+      "version": "4.0.12",
+      "label": "4.0.12 · 兼容旧版客户端",
+      "api": "4.0 Jobs API",
+      "python": "3.12.12",
+      "releaseUrl": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.12-released",
+      "notes": "保留 /v1/uploads 和 /v1/parse/jobs，适用于 llm-for-zotero 3.9.15。"
+    },
+    {
+      "version": "4.1.2",
+      "label": "4.1.2 · Tasks API",
+      "api": "4.1 Tasks API",
+      "python": "3.12.12",
+      "releaseUrl": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.2-released",
+      "notes": "使用新的 /v1/tasks 协议，需要客户端支持 MinerU 4.1。"
+    }
+  ]
+}

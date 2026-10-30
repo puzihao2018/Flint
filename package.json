@@ -1,0 +1,43 @@
+{
+  "name": "flint-launcher",
+  "version": "0.1.9",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "tauri": "tauri",
+    "desktop": "tauri dev",
+    "package": "tauri build --bundles app -- --locked",
+    "test": "cargo test --locked --manifest-path src-tauri/Cargo.toml -- --test-threads=1",
+    "format": "prettier --write src vite.config.ts",
+    "prepare:runtime": "python3 scripts/prepare-runtime.py",
+    "notices": "python3 scripts/generate-notices.py",
+    "check:version": "python3 scripts/check-version.py",
+    "pretest": "npm run prepare:runtime",
+    "prepackage": "npm run check:version",
+    "release:mac": "python3 scripts/release-macos.py",
+    "manifest:check": "cargo run --quiet --locked --manifest-path src-tauri/Cargo.toml --bin flint-manifest -- check"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.12.4",
+    "@tauri-apps/plugin-dialog": "2.8.4",
+    "lucide-react": "1.64.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "4.7.0",
+    "prettier": "3.6.2",
+    "typescript": "7.0.2",
+    "vite": "6.4.5"
+  },
+  "license": "MIT",
+  "description": "A local service launcher with isolated installs and a macOS menu bar.",
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

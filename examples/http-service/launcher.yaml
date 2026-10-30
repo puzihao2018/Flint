@@ -1,0 +1,13 @@
+schemaVersion: "0.1"
+name: Example HTTP service
+category: service
+environment:
+  mode: existing
+parameters:
+  port:
+    default: 18372
+service:
+  protocol: http-api
+  cwd: .
+  command: 'python3 server.py --host 127.0.0.1 --port ${port}'
+  healthPath: /healthz

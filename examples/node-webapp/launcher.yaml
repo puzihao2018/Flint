@@ -1,0 +1,20 @@
+schemaVersion: "0.2"
+id: example.node-webapp
+version: "1.0.0"
+name: Node Web App
+platforms: [macos, linux]
+environment:
+  mode: existing
+parameters:
+  port:
+    default: 18373
+install:
+  - program: npm
+    args: [ci, --ignore-scripts, --no-audit, --no-fund]
+service:
+  protocol: http-api
+  cwd: .
+  run:
+    program: node
+    args: [server.mjs]
+  healthPath: /healthz

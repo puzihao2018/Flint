@@ -1,0 +1,19 @@
+schemaVersion: "0.2"
+id: example.python-webapp
+version: "1.0.0"
+name: Python Web App
+platforms: [macos, linux]
+environment:
+  mode: existing
+parameters:
+  port:
+    default: 18374
+install:
+  - program: uv
+    args: [sync, --frozen, --no-dev]
+service:
+  protocol: http-api
+  run:
+    program: uv
+    args: [run, --frozen, --no-sync, python, -u, server.py, --host, "${host}", --port, "${port}"]
+  healthPath: /healthz
