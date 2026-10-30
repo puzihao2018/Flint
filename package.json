@@ -18,7 +18,8 @@
     "prepackage": "npm run check:version",
     "release:mac": "python3 scripts/release-macos.py",
     "manifest:check": "cargo run --quiet --locked --manifest-path src-tauri/Cargo.toml --bin flint-manifest -- check",
-    "test:i18n": "node scripts/test-i18n.mjs"
+    "test:i18n": "node scripts/test-i18n.mjs",
+    "site:build": "python3 scripts/build-website.py"
   },
   "dependencies": {
     "@tauri-apps/api": "2.12.4",

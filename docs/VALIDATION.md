@@ -65,3 +65,11 @@ Applications 安装版实际验证：默认跟随系统为英文，中文/Englis
 - 中英文资源检查（264 项）、TypeScript / Vite 构建、版本一致性检查通过。
 - macOS arm64 DMG / ZIP 打包与签名检查通过，Applications 已更新。
 - 实际界面检查服务详情、市场与设置；Logo 无副标题，页面保留必要状态与操作信息。MinerU 保持停止。
+
+## Project website — 2026-10-30
+
+- Added a static English/Chinese landing page, simulated service controls, menu bar preview, manifest copy button, and GitHub Pages workflow.
+- `npm run site:build`, JavaScript syntax checks, and documentation link checks passed. The displayed YAML passed `flint-manifest check`.
+- Browser checks covered desktop and 390 px mobile layouts, horizontal overflow, start/stop simulation, service tabs, keyboard tab selection, menu preview, Chinese persistence after reload, and copy-button feedback. No browser error logs were observed.
+- Full installation and compatibility information was preserved in `USER-GUIDE.md` and `USER-GUIDE_CN.md`; both READMEs now act as shorter entry points.
+- Public hosting is pending repository visibility/Pages configuration. There is no published binary release yet; download links point to Actions artifacts and explicitly require GitHub sign-in.

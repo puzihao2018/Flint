@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#203e35" />
+    <title>Flint — A home for your local services</title>
+    <meta
+      name="description"
+      content="Install MinerU, launch web apps, and manage HTTP and MCP servers from one desktop app. A local service launcher for macOS, built with Tauri and Rust. MIT licensed."
+    />
+    <meta
+      property="og:title"
+      content="Flint — A home for your local services"
+    />
+    <meta
+      property="og:description"
+      content="Less terminal juggling. More making. Install, launch, and manage local services with Flint."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://puzihao2018.github.io/Flint/" />
+    <meta
+      property="og:image"
+      content="https://puzihao2018.github.io/Flint/assets/social.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://puzihao2018.github.io/Flint/" />
+    <link rel="icon" type="image/svg+xml" href="assets/flint.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Flint home"
+        ><img src="assets/flint.svg" width="36" height="36" alt="" /><span
+          >Flint</span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#features" data-i18n="navFeatures">Features</a>
+        <a href="#developers" data-i18n="navDevelopers">For developers</a>
+        <a href="https://github.com/puzihao2018/Flint" class="github-link"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+        <button id="language" aria-label="Switch to Simplified Chinese">
+          中文
+        </button>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <a class="release-label" href="#download"
+            ><span class="status-dot"></span
+            ><span data-i18n="alpha">macOS alpha · Apple Silicon</span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <h1 data-i18n-html="heroTitle">
+            A home for<br />your <em>local services.</em>
+          </h1>
+          <p class="hero-description" data-i18n="heroDescription">
+            Install MinerU. Launch your web app. Keep your servers within reach
+            — without a collection of terminal windows.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#download"
+              ><span data-i18n="getFlint">Get Flint for Mac</span
+              ><span aria-hidden="true">↓</span></a
+            ><a class="text-link" href="https://github.com/puzihao2018/Flint"
+              ><span data-i18n="viewSource">View source</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <p class="hero-meta" data-i18n="heroMeta">
+            MIT licensed. Runs on your machine.
+          </p>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-orbit" aria-hidden="true"></div>
+          <div class="preview-bar">
+            <span aria-hidden="true">◌</span
+            ><span data-i18n="previewHeading">Your local workspace</span
+            ><span class="preview-clock">09:41</span
+            ><button
+              id="tray-toggle"
+              aria-expanded="false"
+              aria-controls="tray-preview"
+              aria-label="Show menu bar demo"
+            >
+              <img src="assets/flint.svg" width="21" height="21" alt="Flint" />
+            </button>
+          </div>
+          <div class="demo-window" aria-label="Interactive Flint product demo">
+            <div class="window-chrome">
+              <span class="traffic" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>Flint</span
+              ><span class="window-demo" data-i18n="demoLabel"
+                >INTERACTIVE DEMO</span
+              >
+            </div>
+            <div class="demo-layout">
+              <aside class="demo-sidebar">
+                <div class="mini-brand">
+                  <img
+                    src="assets/flint.svg"
+                    width="27"
+                    height="27"
+                    alt=""
+                  />Flint
+                </div>
+                <span class="demo-section" data-i18n="services"
+                  >My services</span
+                >
+                <div
+                  class="service-tabs"
+                  role="tablist"
+                  aria-label="Demo services"
+                  aria-orientation="vertical"
+                >
+                  <button
+                    role="tab"
+                    id="tab-mineru"
+                    aria-controls="demo-detail"
+                    aria-selected="true"
+                    data-service="mineru"
+                  >
+                    <span class="service-symbol">M</span><span>MinerU</span
+                    ><i class="mini-dot"></i></button
+                  ><button
+                    role="tab"
+                    id="tab-webapp"
+                    aria-controls="demo-detail"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-service="webapp"
+                  >
+                    <span class="service-symbol web">↗</span
+                    ><span>Web App</span><i class="mini-dot"></i></button
+                  ><button
+                    role="tab"
+                    id="tab-mcp"
+                    aria-controls="demo-detail"
+                    aria-selected="false"
+                    tabindex="-1"
+                    data-service="mcp"
+                  >
+                    <span class="service-symbol mcp">⌘</span
+                    ><span>MCP Server</span><i class="mini-dot"></i>
+                  </button>
+                </div>
+                <span class="sidebar-foot" data-i18n="demoLocal"
+                  >LOCALHOST</span
+                >
+              </aside>
+              <div
+                class="demo-detail"
+                id="demo-detail"
+                role="tabpanel"
+                aria-labelledby="tab-mineru"
+              >
+                <div class="demo-detail-top">
+                  <div class="app-tile" id="demo-icon" aria-hidden="true">
+                    M
+                  </div>
+                  <span id="demo-state" class="state-badge"
+                    ><i></i><span data-i18n="running">Running</span></span
+                  >
+                </div>
+                <h2 id="demo-title">MinerU 4.0.12</h2>
+                <p id="demo-kind" data-i18n="mineruKind">
+                  Document parsing · HTTP API
+                </p>
+                <div class="demo-endpoint">
+                  <span data-i18n="endpoint">Service endpoint</span
+                  ><code id="demo-url">127.0.0.1:8001</code
+                  ><span id="demo-health" data-i18n="healthy"
+                    >✓ API check passed</span
+                  >
+                </div>
+                <div class="demo-facts">
+                  <div>
+                    <span data-i18n="port">Port</span
+                    ><strong id="demo-port">8001</strong>
+                  </div>
+                  <div>
+                    <span data-i18n="environment">Environment</span
+                    ><strong id="demo-environment">Python 3.12</strong>
+                  </div>
+                </div>
+                <button
+                  class="demo-control"
+                  id="service-toggle"
+                  role="switch"
+                  aria-checked="true"
+                >
+                  <span class="switch-track" aria-hidden="true"></span
+                  ><span id="demo-action" data-i18n="stopService"
+                    >Stop service</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="tray-preview" id="tray-preview" hidden>
+            <strong>Flint <span data-i18n="menuBar">Menu bar</span></strong>
+            <div>
+              <span class="mini-dot"></span><span id="tray-service">MinerU</span
+              ><span id="tray-state" data-i18n="running">Running</span>
+            </div>
+            <code id="tray-url">127.0.0.1:8001</code>
+            <p data-i18n="trayNote">
+              Close the window. Keep your services running.
+            </p>
+          </div>
+          <p class="demo-caption">
+            <span class="caption-line"></span
+            ><span data-i18n="demoCaption"
+              >Try the switch. This preview never starts a real service.</span
+            >
+          </p>
+          <div
+            class="demo-announcement sr-only"
+            id="demo-announcement"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+      <div class="service-strip wrap">
+        <span data-i18n="builtFor">BUILT FOR LOCAL WORK</span><span>MinerU</span
+        ><span>HTTP APIs</span><span>MCP servers</span><span>Web apps</span>
+      </div>
+      <section id="features" class="features wrap">
+        <div class="section-heading">
+          <span class="section-number"
+            >01 / <span data-i18n="everyday">EVERYDAY CONTROL</span></span
+          >
+          <h2 data-i18n-html="featuresTitle">
+            Less terminal juggling.<br /><em>More making.</em>
+          </h2>
+        </div>
+        <div class="feature-columns">
+          <article>
+            <div class="feature-icon" aria-hidden="true">↓</div>
+            <h3 data-i18n="featureInstall">Give every version its space.</h3>
+            <p data-i18n="featureInstallBody">
+              Install MinerU 4.0 or 4.1 in separate environments. Keep
+              dependencies, models, and ports organized without touching your
+              system Python.
+            </p>
+            <span class="feature-detail" data-i18n="featureInstallDetail"
+              >Versioned installs · Isolated environments</span
+            >
+          </article>
+          <article>
+            <div class="feature-icon" aria-hidden="true">◉</div>
+            <h3 data-i18n="featureControl">Know what is actually running.</h3>
+            <p data-i18n="featureControlBody">
+              Start and stop services, choose their ports, inspect health
+              checks, and read their logs. No separate stop command to remember.
+            </p>
+            <span class="feature-detail" data-i18n="featureControlDetail"
+              >Process control · Health checks · Logs</span
+            >
+          </article>
+          <article>
+            <div class="feature-icon" aria-hidden="true">≡</div>
+            <h3 data-i18n="featureTray">Close the window. Stay in control.</h3>
+            <p data-i18n="featureTrayBody">
+              Keep Flint in the macOS menu bar while services run. Bring up
+              quick controls when you need them, then get back to your work.
+            </p>
+            <button class="text-link" id="show-tray">
+              <span data-i18n="tryTray">Try the menu bar preview</span
+              ><span aria-hidden="true">↗</span>
+            </button>
+          </article>
+        </div>
+      </section>
+      <section class="developer-section" id="developers">
+        <div class="wrap developer-grid">
+          <div class="developer-copy">
+            <span class="section-number"
+              >02 / <span data-i18n="yourProject">YOUR PROJECT, TOO</span></span
+            >
+            <h2 data-i18n-html="developerTitle">
+              A small file.<br /><em>An easier launch.</em>
+            </h2>
+            <p data-i18n="developerBody">
+              Keep building with the tools you know. Add a launcher.yaml to
+              describe how your app installs, starts, and answers a health
+              check.
+            </p>
+            <p data-i18n="developerAI">
+              Give the integration guide to your coding agent. It can make your
+              next web app ready for Flint from the start.
+            </p>
+            <a
+              class="button light"
+              href="https://github.com/puzihao2018/Flint/blob/main/docs/AI-INTEGRATION.md"
+              ><span data-i18n="aiGuide">Integration guide for AI</span
+              ><span aria-hidden="true">↗</span></a
+            >
+            <div class="developer-links">
+              <a
+                href="https://github.com/puzihao2018/Flint/blob/main/docs/COMMAND-CONTRACT.md"
+                data-i18n="spec"
+                >Read the specification</a
+              ><a
+                href="https://github.com/puzihao2018/Flint/tree/main/examples"
+                data-i18n="examples"
+                >Explore examples</a
+              >
+            </div>
+          </div>
+          <div class="code-panel">
+            <div class="code-header">
+              <span><i aria-hidden="true"></i>launcher.yaml</span
+              ><button id="copy-manifest" data-i18n="copy">Copy</button>
+            </div>
+            <pre><code id="manifest-code"><span class="key">schemaVersion:</span> "0.2"
+<span class="key">id:</span> example.python-webapp
+<span class="key">version:</span> "1.0.0"
+<span class="key">name:</span> Python Web App
+<span class="key">environment:</span>
+  <span class="key">mode:</span> existing
+<span class="key">parameters:</span>
+  <span class="key">port:</span>
+    <span class="key">default:</span> 3000
+<span class="key">install:</span>
+  - <span class="key">program:</span> uv
+    <span class="key">args:</span> [sync, --frozen, --no-dev]
+<span class="key">service:</span>
+  <span class="key">protocol:</span> http-api
+  <span class="key">run:</span>
+    <span class="key">program:</span> uv
+    <span class="key">args:</span>
+      - run
+      - --frozen
+      - --no-sync
+      - python
+      - server.py
+      - --host
+      - "${host}"
+      - --port
+      - "${port}"
+  <span class="key">healthPath:</span> /healthz</code></pre>
+            <div class="code-footer" data-i18n="codeNote">
+              For the Python/uv example project. Uses its existing directory.
+            </div>
+            <span class="sr-only" id="copy-status" role="status"></span>
+          </div>
+        </div>
+      </section>
+      <section class="getting-started wrap" id="download">
+        <div class="section-heading">
+          <span class="section-number"
+            >03 / <span data-i18n="getStarted">GET STARTED</span></span
+          >
+          <h2 data-i18n-html="downloadTitle">
+            Make room<br />for <em>your next idea.</em>
+          </h2>
+        </div>
+        <div class="download-grid">
+          <div class="download-card">
+            <img src="assets/flint.svg" alt="" width="64" height="64" />
+            <h3>Flint <span>0.1.12 alpha</span></h3>
+            <p data-i18n="downloadPlatform">macOS 13+ · Apple Silicon</p>
+            <a
+              class="button primary"
+              href="https://github.com/puzihao2018/Flint/actions/workflows/macos.yml"
+              ><span data-i18n="downloadBuild">Get the macOS build</span
+              ><span aria-hidden="true">↗</span></a
+            >
+            <p class="download-note" data-i18n="downloadNote">
+              Open a successful run and download Flint-macOS-arm64 under
+              Artifacts. GitHub sign-in required.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/puzihao2018/Flint/releases"
+              ><span data-i18n="browseReleases">Browse releases</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="installation">
+            <ol>
+              <li>
+                <h3 data-i18n="step1">Install Flint</h3>
+                <p data-i18n="step1Body">
+                  Extract the build artifact, open the DMG, and drag Flint into
+                  Applications.
+                </p>
+              </li>
+              <li>
+                <h3 data-i18n="step2">Add something useful</h3>
+                <p data-i18n="step2Body">
+                  Choose a MinerU release from the app market, import a
+                  launcher.yaml, or enter your own startup command.
+                </p>
+              </li>
+              <li>
+                <h3 data-i18n="step3">Flip the switch</h3>
+                <p data-i18n="step3Body">
+                  Wait for the health check, then use the service address in
+                  your browser or client.
+                </p>
+              </li>
+            </ol>
+            <a
+              class="text-link"
+              id="user-guide"
+              href="https://github.com/puzihao2018/Flint/blob/main/docs/USER-GUIDE.md"
+              ><span data-i18n="installationGuide">Full installation guide</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <div class="release-notes">
+          <p data-i18n="alphaNote">
+            Early alpha. Builds are ad-hoc signed, not Apple-notarized. The
+            first MinerU installation downloads dependencies and models.
+          </p>
+          <p data-i18n="platformNote">
+            Windows, Linux, Intel Mac, and automatic port discovery are planned,
+            not available yet.
+          </p>
+        </div>
+      </section>
+      <section class="faq wrap">
+        <h2 data-i18n="faqTitle">A few useful details.</h2>
+        <div>
+          <details>
+            <summary data-i18n="faq1">Is MinerU an MCP server?</summary>
+            <p data-i18n="faq1Body">
+              No. The built-in MinerU recipe exposes an HTTP API. Flint also
+              supports custom MCP servers over Streamable HTTP. MCP stdio and
+              legacy SSE are not supported yet.
+            </p>
+          </details>
+          <details>
+            <summary data-i18n="faq2">
+              Do my projects need a special launcher?
+            </summary>
+            <p data-i18n="faq2Body">
+              No. You can add a foreground command and an existing project
+              folder directly. A launcher.yaml makes installation steps,
+              arguments, and health checks easier to share. Your program must
+              actually support the configured port.
+            </p>
+          </details>
+          <details>
+            <summary data-i18n="faq3">
+              What happens when I remove a service?
+            </summary>
+            <p data-i18n="faq3Body">
+              You choose whether to remove only its registration or also its
+              managed environment, models, and service data. Flint preserves
+              external project folders and shared caches. Selected managed files
+              are deleted directly, without going to Trash.
+            </p>
+          </details>
+          <details>
+            <summary data-i18n="faq4">
+              Can I contribute a new integration?
+            </summary>
+            <p data-i18n="faq4Body">
+              Yes. Start with an issue describing the service and platform.
+              Include its official source, pinned version, install and run
+              commands, and a real health check. Recipes need actual
+              installation and lifecycle testing before being listed as
+              supported.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="community wrap">
+        <div>
+          <span class="section-number" data-i18n="openDevelopment"
+            >BUILT IN THE OPEN</span
+          >
+          <h2 data-i18n-html="communityTitle">
+            Small tool.<br /><em>Room to grow.</em>
+          </h2>
+        </div>
+        <div>
+          <p data-i18n="communityBody">
+            Flint is MIT licensed and built with Tauri, Rust, and React. Follow
+            the roadmap, report a rough edge, or help a new service find its
+            home.
+          </p>
+          <div class="community-links">
+            <a
+              class="button primary"
+              href="https://github.com/puzihao2018/Flint"
+              ><span data-i18n="contribute">Contribute on GitHub</span
+              ><span aria-hidden="true">↗</span></a
+            ><a
+              class="text-link"
+              href="https://github.com/users/puzihao2018/projects/5"
+              ><span data-i18n="roadmap">View roadmap</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <a class="brand" href="#"
+        ><img src="assets/flint.svg" width="29" height="29" alt="" /><span
+          >Flint</span
+        ></a
+      ><span
+        >© 2026 Zihao Pu ·
+        <a href="https://github.com/puzihao2018/Flint/blob/main/LICENSE"
+          >MIT</a
+        ></span
+      >
+      <div>
+        <a href="https://github.com/puzihao2018/Flint/issues" data-i18n="issues"
+          >Issues</a
+        ><a
+          href="https://github.com/puzihao2018/Flint/blob/main/CHANGELOG.md"
+          data-i18n="changelog"
+          >Changelog</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
