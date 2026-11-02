@@ -1,24 +1,14 @@
-<div align="center">
-  <img src="../../branding/app-icon.svg" width="88" alt="Flint" />
-  <h1>Flint</h1>
-  <p>在自己的电脑上托管 Web 应用和 HTTP 服务。导入项目提供的 launcher.yaml，就能在 Flint 里一键启停。</p>
-  <p><a href="https://zihaopu.cn/Flint/?lang=zh-CN">项目网站</a> · <a href="USER-GUIDE.md">使用指南</a> · <a href="AI-INTEGRATION.md">接入 Flint</a></p>
-</div>
+# Flint
 
-[English](../../README.md) | **简体中文**
+在自己的 Mac 上运行 Web 应用、HTTP API 和 MCP 服务。项目只需添加一次，之后就能从菜单栏启停服务、查看运行状态、复制本地地址。
 
-[![macOS 构建](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml/badge.svg)](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml)
-[![网站](https://github.com/puzihao2018/Flint/actions/workflows/pages.yml/badge.svg)](https://github.com/puzihao2018/Flint/actions/workflows/pages.yml)
-[![MIT](https://img.shields.io/badge/license-MIT-203e35)](../../LICENSE)
+[下载 Mac 版](https://github.com/puzihao2018/Flint/releases/download/v0.1.13/Flint-0.1.13-macOS-arm64.dmg) · [试用交互演示](https://zihaopu.cn/Flint/?lang=zh-CN) · [English](../../README.md)
 
-## Flint 能做什么
+![导入项目清单，打开服务开关，复制本地地址。菜单栏示例中，Web 应用正在 3000 端口运行，MCP 服务已停止。](images/menu-bar.png)
 
-- **独立安装 MinerU**：4.0.12 与 4.1.2 可并存，各自使用独立环境。
-- **管理后台服务**：启动、停止、配置端口、健康检查和日志集中展示。
-- **菜单栏快捷控制**：关闭主窗口后，服务继续运行。
-- **接入自己的项目**：直接填写前台启动命令，或导入 `launcher.yaml`。
-- **按需清理空间**：只删除登记，或选择卸载受管环境和模型。
-- **中英文界面**：语言可切换，偏好会保留。
+**已有 Web 应用？** 导入它的 `launcher.yaml`，或选中项目目录并填写一次启动命令。Flint 会记住端口，关闭主窗口后应用仍在后台运行。
+
+**想安装本地工具？** 在应用市场选择支持的版本，由 Flint 安装独立环境。打开控制台就能检查服务是否就绪、查看运行日志。
 
 ## 获取 Flint
 
@@ -30,7 +20,7 @@
 
 ## 接入你的项目
 
-添加已有项目目录与启动命令，或导入 [`launcher.yaml`](../../examples/python-webapp/launcher.yaml)。Flint 管理进程启停，无需单独提供停止命令。
+要让用户直接导入你的项目，请随项目提供 [launcher.yaml](../../examples/python-webapp/launcher.yaml)，写明启动命令、端口设置和必要的安装步骤。
 
 [接入规范](COMMAND-CONTRACT.md) · [给编程 AI 的指南](AI-INTEGRATION.md) · [Node 示例](NODE-EXAMPLE.md) · [Python/uv 示例](PYTHON-EXAMPLE.md)
 

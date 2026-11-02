@@ -1,24 +1,14 @@
-<div align="center">
-  <img src="branding/app-icon.svg" width="88" alt="Flint" />
-  <h1>Flint</h1>
-  <p>Host web apps and HTTP services on your computer. Import a launcher.yaml, then start and stop the service from Flint.</p>
-  <p><a href="https://zihaopu.cn/Flint/?lang=en">Website</a> · <a href="docs/EN/USER-GUIDE.md">User guide</a> · <a href="docs/EN/AI-INTEGRATION.md">Build for Flint</a></p>
-</div>
+# Flint
 
-**English** | [简体中文](docs/CN/README.md)
+Run web apps, HTTP APIs, and MCP servers on your own Mac. Add a project once, then use the menu bar to start it, check whether it’s running, or copy its local address.
 
-[![macOS build](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml/badge.svg)](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml)
-[![Website](https://github.com/puzihao2018/Flint/actions/workflows/pages.yml/badge.svg)](https://github.com/puzihao2018/Flint/actions/workflows/pages.yml)
-[![MIT](https://img.shields.io/badge/license-MIT-203e35)](LICENSE)
+[Download for Mac](https://github.com/puzihao2018/Flint/releases/download/v0.1.13/Flint-0.1.13-macOS-arm64.dmg) · [Try the interactive demo](https://zihaopu.cn/Flint/?lang=en) · [简体中文](docs/CN/README.md)
 
-## What Flint does
+![Import a project manifest, start the service, and copy its address. Flint’s menu bar shows an example web app running on port 3000 and a stopped MCP server.](docs/EN/images/menu-bar.png)
 
-- **Installs MinerU** in isolated environments, with 4.0.12 and 4.1.2 available side by side.
-- **Manages your services** with start/stop controls, configurable ports, health checks, and logs.
-- **Runs from the menu bar** when the main window is closed.
-- **Works with your projects** through a foreground command or a portable `launcher.yaml`.
-- **Keeps cleanup explicit**: remove a registration, or also uninstall its managed environment and models.
-- **Speaks English and Chinese**, with a saved language preference.
+**Have a web app?** Import its `launcher.yaml`, or choose the project folder and enter its startup command once. Flint remembers the port and keeps the app running when you close the main window.
+
+**Need a local tool?** Pick a supported release from the catalog. Flint installs its environment and lets you check its health and read its logs from the dashboard.
 
 ## Get Flint
 
@@ -30,7 +20,7 @@ Builds are ad-hoc signed and **not Apple-notarized**. First-time MinerU setup do
 
 ## Bring your app
 
-Add an existing project directory and startup command, or import a [`launcher.yaml`](examples/python-webapp/launcher.yaml). Flint handles the process lifecycle; no separate stop command is required.
+To make your project importable, ship a [launcher.yaml](examples/python-webapp/launcher.yaml) with its startup command, port setting, and any install steps.
 
 [Integration contract](docs/EN/COMMAND-CONTRACT.md) · [Guide for coding agents](docs/EN/AI-INTEGRATION.md) · [Node example](docs/EN/NODE-EXAMPLE.md) · [Python/uv example](docs/EN/PYTHON-EXAMPLE.md)
 
