@@ -3,7 +3,7 @@
   <h1>Flint</h1>
   <p>让本地服务，有一个自己的家。</p>
   <p>安装 MinerU，启动 Web App，在菜单栏管理 HTTP 与 MCP 服务。</p>
-  <p><a href="https://puzihao2018.github.io/Flint/">项目网站</a> · <a href="docs/USER-GUIDE_CN.md">使用指南</a> · <a href="docs/AI-INTEGRATION.md">接入 Flint</a> · <a href="https://github.com/users/puzihao2018/projects/5">路线图</a></p>
+  <p><a href="https://zihaopu.cn/Flint/">项目网站</a> · <a href="docs/USER-GUIDE_CN.md">使用指南</a> · <a href="docs/AI-INTEGRATION.md">接入 Flint</a> · <a href="https://github.com/users/puzihao2018/projects/5">路线图</a></p>
 </div>
 
 [English](README.md) | **简体中文**

@@ -1,6 +1,6 @@
 # Project website
 
-The Flint website lives in `website/` and publishes to <https://puzihao2018.github.io/Flint/> through GitHub Pages. It uses plain HTML, CSS, and JavaScript with no runtime dependencies, tracking, remote fonts, or backend.
+The Flint website lives in `website/` and publishes to <https://zihaopu.cn/Flint/> through GitHub Pages. It uses plain HTML, CSS, and JavaScript with no runtime dependencies, tracking, remote fonts, or backend.
 
 ## Local preview
 

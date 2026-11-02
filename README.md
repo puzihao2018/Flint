@@ -3,7 +3,7 @@
   <h1>Flint</h1>
   <p>A home for your local services.</p>
   <p>Install MinerU. Launch web apps. Manage HTTP and MCP servers from your menu bar.</p>
-  <p><a href="https://puzihao2018.github.io/Flint/">Website</a> · <a href="docs/USER-GUIDE.md">User guide</a> · <a href="docs/AI-INTEGRATION.md">Build for Flint</a> · <a href="https://github.com/users/puzihao2018/projects/5">Roadmap</a></p>
+  <p><a href="https://zihaopu.cn/Flint/">Website</a> · <a href="docs/USER-GUIDE.md">User guide</a> · <a href="docs/AI-INTEGRATION.md">Build for Flint</a> · <a href="https://github.com/users/puzihao2018/projects/5">Roadmap</a></p>
 </div>
 
 **English** | [简体中文](readme_cn.md)
