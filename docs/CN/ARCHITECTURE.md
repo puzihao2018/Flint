@@ -1,5 +1,7 @@
 # 架构与数据
 
+[English](../EN/ARCHITECTURE.md)
+
 React 主窗口和菜单栏 WebView 通过 Tauri commands 访问同一个 Rust Engine。Engine 管理配置、安装任务、服务进程组、健康检查和日志；关闭窗口不会关闭 Engine，明确退出会停止受管服务。
 
 macOS 数据根目录：`~/Library/Application Support/local.flint.services/`。开发可用 `FLINT_DATA_DIR` 覆盖。

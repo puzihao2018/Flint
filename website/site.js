@@ -67,6 +67,8 @@ let locale = "en";
 try {
   if (localStorage.getItem("flint-site-language") === "zh-CN") locale = "zh-CN";
 } catch {}
+const requestedLanguage = new URLSearchParams(location.search).get("lang");
+if (requestedLanguage === "en" || requestedLanguage === "zh-CN") locale = requestedLanguage;
 let selected = "mineru";
 const serviceData = {
   mineru: {
@@ -167,17 +169,21 @@ function setLanguage(language) {
       "aria-label",
       locale === "en" ? "Interactive Flint product demo" : "Flint 交互演示",
     );
-  $("user-guide").href =
-    "https://github.com/puzihao2018/Flint/blob/main/docs/" +
-    (locale === "en" ? "USER-GUIDE.md" : "USER-GUIDE_CN.md");
+  const folder = locale === "en" ? "EN" : "CN";
+  document.querySelectorAll("a[data-doc]").forEach((link) => {
+    link.href = `https://github.com/puzihao2018/Flint/blob/main/docs/${folder}/${link.dataset.doc}`;
+  });
   renderService();
   try {
     localStorage.setItem("flint-site-language", locale);
   } catch {}
 }
-$("language").addEventListener("click", () =>
-  setLanguage(locale === "en" ? "zh-CN" : "en"),
-);
+$("language").addEventListener("click", () => {
+  setLanguage(locale === "en" ? "zh-CN" : "en");
+  const url = new URL(location.href);
+  url.searchParams.set("lang", locale);
+  history.replaceState(null, "", url);
+});
 document.querySelectorAll("[data-service]").forEach((button) => {
   button.addEventListener("click", () => {
     selected = button.dataset.service;

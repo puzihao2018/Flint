@@ -1,5 +1,7 @@
 # Flint 项目接入标准 0.2
 
+[English](../EN/COMMAND-CONTRACT.md)
+
 适用 Flint **0.1.9 起**。`launcher.yaml` 是项目随代码提交的启动清单；也接受同结构 JSON。Flint 0.1.8 及更早只支持 0.1 清单。旧清单与已登记服务继续兼容。
 
 目标是让一个 Web App、HTTP API 或 MCP HTTP 服务可以导入、安装、启动、检查和停止。应用不需要 Flint SDK，也不需要回调 Flint。当前没有外部管理 HTTP API。
@@ -140,7 +142,7 @@ service:
 
 ## 验证与迁移
 
-[JSON Schema](../schema/launcher.schema.json) 同时描述 0.1/0.2，可配置到编辑器。它检查结构；工作目录是否存在、当前平台是否匹配由实际导入器检查。运行时对名称/版本限制按 UTF-8 字节计数，Schema 按字符计数。
+[JSON Schema](../../schema/launcher.schema.json) 同时描述 0.1/0.2，可配置到编辑器。它检查结构；工作目录是否存在、当前平台是否匹配由实际导入器检查。运行时对名称/版本限制按 UTF-8 字节计数，Schema 按字符计数。
 
 仓库开发工具（需要 Rust；不是安装版的远程控制 API）：
 
@@ -150,6 +152,6 @@ npm run manifest:check -- /absolute/path/to/launcher.yaml
 
 只解析/验证，输出简短结果，不安装、不启动、不修改服务登记。通过校验不代表启动成功或项目可信；还需实际安装、请求、改端口、停止测试。
 
-0.1 的 `service.command` 仍按原来 shell 语义执行，唯一 Flint 占位符仍为 `${port}`。0.2 使用 `service.run`，不同时接受 `command`；移除原 `category: service`，新增应用 `id` / `version`。旧版本示例保留在 [http-service](../examples/http-service/launcher.yaml)。
+0.1 的 `service.command` 仍按原来 shell 语义执行，唯一 Flint 占位符仍为 `${port}`。0.2 使用 `service.run`，不同时接受 `command`；移除原 `category: service`，新增应用 `id` / `version`。旧版本示例保留在 [http-service](../../examples/http-service/launcher.yaml)。
 
-可运行示例：[Node Web App](../examples/node-webapp/README.md)、[Python / uv Web App](../examples/python-webapp/README.md)。给代码生成 AI 的独立参考：[AI-INTEGRATION.md](AI-INTEGRATION.md)。
+可运行示例：[Node Web App](NODE-EXAMPLE.md)、[Python / uv Web App](PYTHON-EXAMPLE.md)。给代码生成 AI 的独立参考：[AI-INTEGRATION.md](AI-INTEGRATION.md)。

@@ -1,5 +1,7 @@
 # Flint 0.1.12 · macOS alpha
 
+[English](https://github.com/puzihao2018/Flint/blob/main/docs/EN/RELEASE-NOTES.md)
+
 Flint 将本地服务的安装、启动、端口配置和日志放到桌面应用里。
 
 - 清理装饰性小字与标语，保留功能信息。

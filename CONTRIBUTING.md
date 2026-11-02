@@ -1,11 +1,3 @@
 # Contributing
 
-请先阅读 README 的开发说明和 [使用指南](docs/USER-GUIDE_CN.md)。PR 描述具体问题、最终行为和实际验证；涉及服务生命周期时运行 `npm test`，涉及界面时运行 `npm run build` 并做相关 UI 检查。构建和打包使用锁定依赖，不随手升级无关包。
-
-增加服务配方时给出官方来源、准确版本、安装和启动命令、端口参数、退出方式、健康检查及验证平台。AI 生成的配方需要真实运行验证，不能直接标记为支持。见 docs/RELEASES.md 和 docs/COMMAND-CONTRACT.md。
-
-不要提交运行环境、模型、用户服务配置、API Key、个人文献或完整个人日志。原始问题日志应脱敏；安装包由 Release 流程生成。新的平台支持需要实际安装、启动、解析、停止与托盘验证。
-
-提交的贡献按项目 MIT 许可证提供；新增第三方代码与资源需要保留相应授权和声明。
-
-项目网站位于 `website/`，运行 `npm run site:build` 后进行桌面、移动端和双语检查；详见 [网站维护](docs/WEBSITE.md)。
+[English](docs/EN/CONTRIBUTING.md) · [简体中文](docs/CN/CONTRIBUTING.md)

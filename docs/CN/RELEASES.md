@@ -1,5 +1,7 @@
 # Flint Release 安装约定（0.1.3）
 
+[English](../EN/RELEASES.md)
+
 应用身份 recipe 与上游发布版本 version 分开记录。应用市场以 releases 数组展示可安装版本，而不是只提供一个 latest。选择已有版本返回既有服务；选择新版本创建独立服务实例。安装操作始终使用实例记录的精确版本。
 
 ## 当前实现

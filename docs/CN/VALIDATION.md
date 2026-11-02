@@ -1,5 +1,7 @@
 # 验证范围
 
+[English](../EN/VALIDATION.md)
+
 ## 原型阶段（2026-10-29 至 2026-10-30）
 
 - Apple Silicon 开发机上完成 MinerU 4.1.2 独立安装、文本/扫描 PDF 解析、8000 → 3000 改端口、停止及退出清理。
@@ -16,7 +18,7 @@
 
 ## 未完成的验证
 
-Intel、Windows、Linux、全部 macOS 版本/芯片、所有 MinerU 档位与模型源、Developer ID 公证，以及真实 GitHub Actions 托管执行。不要将构建成功当成这些场景已经验收。
+Intel、Windows、Linux、全部 macOS 版本/芯片、所有 MinerU 档位与模型源、Developer ID 公证。不要将构建成功当成这些场景已经验收。
 
 ## 独立仓库发布准备（2026-10-30）
 
@@ -66,10 +68,8 @@ Applications 安装版实际验证：默认跟随系统为英文，中文/Englis
 - macOS arm64 DMG / ZIP 打包与签名检查通过，Applications 已更新。
 - 实际界面检查服务详情、市场与设置；Logo 无副标题，页面保留必要状态与操作信息。MinerU 保持停止。
 
-## Project website — 2026-10-30
+## 官网与公开发布
 
-- Added a static English/Chinese landing page, simulated service controls, menu bar preview, manifest copy button, and GitHub Pages workflow.
-- `npm run site:build`, JavaScript syntax checks, and documentation link checks passed. The displayed YAML passed `flint-manifest check`.
-- Browser checks covered desktop and 390 px mobile layouts, horizontal overflow, start/stop simulation, service tabs, keyboard tab selection, menu preview, Chinese persistence after reload, and copy-button feedback. No browser error logs were observed.
-- Full installation and compatibility information was preserved in `USER-GUIDE.md` and `USER-GUIDE_CN.md`; both READMEs now act as shorter entry points.
-- Public hosting is pending repository visibility/Pages configuration. There is no published binary release yet; download links point to Actions artifacts and explicitly require GitHub sign-in.
+静态双语官网在桌面和 390 px 移动端布局下经过检查，覆盖横向溢出、键盘导航、模拟服务启停、菜单栏预览、语言切换与保存，以及清单复制反馈。页面中的 YAML 通过了清单校验。当时的浏览器检查没有发现错误日志。
+
+v0.1.12 的 GitHub Actions 标签构建和 Pages 部署随后成功。DMG 和 ZIP 均通过匿名下载，并与发布的 SHA-256 校验清单一致。

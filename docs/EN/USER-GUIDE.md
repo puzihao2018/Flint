@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="../branding/app-icon.svg" width="104" alt="Flint logo" />
+  <img src="../../branding/app-icon.svg" width="104" alt="Flint logo" />
   <h1>Flint</h1>
   <p>A local service launcher with isolated installs and a macOS menu bar.</p>
 </div>
 
-**English** | [简体中文](USER-GUIDE_CN.md)
+[简体中文](../CN/USER-GUIDE.md)
 
 Flint brings installation, startup, port configuration, and logs for command-line services into a desktop app. MinerU is the first built-in recipe. You can also add startup commands for existing HTTP APIs, MCP HTTP servers, and web apps.
 
-**Current version: 0.1.12 alpha · macOS Apple Silicon.** Windows, Linux, and Intel Mac builds have not been released. Flint uses Tauri 2, Rust, React, and TypeScript and is licensed under [MIT](../LICENSE).
+**Current version: 0.1.12 alpha · macOS Apple Silicon.** Windows, Linux, and Intel Mac builds have not been released. Flint uses Tauri 2, Rust, React, and TypeScript and is licensed under [MIT](../../LICENSE).
 
 ## Installation and usage
 
@@ -56,9 +56,9 @@ Under **Add service**, enter a name, an existing project directory, a foreground
 
 `${port}` is replaced with the port configured in Flint. Your program must support the corresponding argument. Flint stops services by sending an interrupt signal, so no separate stop command is needed. Do not use `nohup`, `&`, or daemonize the process.
 
-You can also import a [`launcher.yaml` 0.2 manifest](../examples/node-webapp/launcher.yaml), with an app ID/version, structured arguments and environment variables, and explicit installation steps. Version 0.1 manifests remain compatible. Importing and saving do not execute code. If the manifest includes installation steps, click **Install dependencies**; all steps must succeed before the service can start. Custom services use an existing project directory, and Flint does not uninstall that project's `node_modules` or `.venv`.
+You can also import a [`launcher.yaml` 0.2 manifest](../../examples/node-webapp/launcher.yaml), with an app ID/version, structured arguments and environment variables, and explicit installation steps. Version 0.1 manifests remain compatible. Importing and saving do not execute code. If the manifest includes installation steps, click **Install dependencies**; all steps must succeed before the service can start. Custom services use an existing project directory, and Flint does not uninstall that project's `node_modules` or `.venv`.
 
-Developer resources: [integration contract](COMMAND-CONTRACT.md) · [instructions for AI](AI-INTEGRATION.md) · [JSON Schema](../schema/launcher.schema.json) · [Node example](../examples/node-webapp/README.md) · [Python/uv example](../examples/python-webapp/README.md).
+Developer resources: [integration contract](COMMAND-CONTRACT.md) · [instructions for AI](AI-INTEGRATION.md) · [JSON Schema](../../schema/launcher.schema.json) · [Node example](NODE-EXAMPLE.md) · [Python/uv example](PYTHON-EXAMPLE.md).
 
 Run `npm run manifest:check -- /path/to/launcher.yaml` to validate a manifest without executing it. MCP support currently covers Streamable HTTP initialization checks; stdio, legacy SSE, and authenticated probe configuration are not supported.
 
@@ -91,10 +91,10 @@ Use a separate data directory for development, for example `FLINT_DATA_DIR=/tmp/
 
 On macOS, data is stored in `~/Library/Application Support/local.flint.services/`. This includes apps, models, configuration, caches, and logs. Replacing the application does not delete this data. See [architecture and storage](ARCHITECTURE.md).
 
-## Status and roadmap
+## Current support
 
 Available now: multiple built-in MinerU versions, isolated environments, start/stop controls, port configuration, HTTP/MCP HTTP health checks, custom commands, logs, and menu bar controls. The app market is currently a recipe list maintained and shipped with Flint.
 
-Planned: more verified service recipes, AI-assisted recipe adaptation, dedicated web app workflows, automatic port discovery, and other desktop platforms. Launch at login, automatic restart, in-app updates, multi-service orchestration, and automatic installation of arbitrary GitHub releases are not currently supported.
+Launch at login, automatic restart, in-app updates, multi-service orchestration, and automatic installation of arbitrary GitHub releases are not currently supported.
 
-[Validation scope](VALIDATION.md) · [Changelog](../CHANGELOG.md) · [Contributing](../CONTRIBUTING.md) · [Third-party notices](../THIRD-PARTY-NOTICES.md)
+[Validation scope](VALIDATION.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Third-party notices](THIRD-PARTY-NOTICES.md)

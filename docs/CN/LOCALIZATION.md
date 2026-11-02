@@ -1,5 +1,7 @@
 # 本地化维护
 
+[English](../EN/LOCALIZATION.md)
+
 Flint 0.1.10 提供 `system` / `zh-CN` / `en`。设置在「设置与存储 → 语言」，默认跟随系统。中文系统语言（含 zh-Hant）显示简体中文，其他未支持的语言回退到 English。
 
 ## 结构

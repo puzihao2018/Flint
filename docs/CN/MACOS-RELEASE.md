@@ -1,5 +1,7 @@
 # macOS 发布指南
 
+[English](../EN/MACOS-RELEASE.md)
+
 首发仅生成 **Apple Silicon / arm64** 安装包。Intel 需要单独的 uv、Python 依赖锁及真实 MinerU 验证；不要把当前二进制标记为 universal。
 
 ## 本地构建
@@ -32,7 +34,7 @@ shasum -a 256 -c SHA256SUMS.txt
 
 工作流拒绝不匹配的标签，以及覆盖已公开的同名 Release。GitHub 自动生成的源码归档不包含 uv 与模型；构建时按固定校验下载 uv。
 
-GitHub 托管执行本身尚需在真实远端仓库验证。runner 类型依据 [GitHub 官方 runner 表](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)。
+v0.1.12 已经通过 GitHub 托管构建。runner 类型依据 [GitHub 官方 runner 表](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)。
 
 ## Developer ID 签名与公证
 

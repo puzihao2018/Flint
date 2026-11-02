@@ -3,10 +3,10 @@
   <h1>Flint</h1>
   <p>A home for your local services.</p>
   <p>Install MinerU. Launch web apps. Manage HTTP and MCP servers from your menu bar.</p>
-  <p><a href="https://zihaopu.cn/Flint/">Website</a> · <a href="docs/USER-GUIDE.md">User guide</a> · <a href="docs/AI-INTEGRATION.md">Build for Flint</a> · <a href="https://github.com/users/puzihao2018/projects/5">Roadmap</a></p>
+  <p><a href="https://zihaopu.cn/Flint/?lang=en">Website</a> · <a href="docs/EN/USER-GUIDE.md">User guide</a> · <a href="docs/EN/AI-INTEGRATION.md">Build for Flint</a></p>
 </div>
 
-**English** | [简体中文](readme_cn.md)
+**English** | [简体中文](docs/CN/README.md)
 
 [![macOS build](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml/badge.svg)](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml)
 [![Website](https://github.com/puzihao2018/Flint/actions/workflows/pages.yml/badge.svg)](https://github.com/puzihao2018/Flint/actions/workflows/pages.yml)
@@ -27,15 +27,15 @@
 
 [Download Flint 0.1.12 for macOS (DMG)](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg). Open the DMG and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12) includes the ZIP and SHA-256 checksums.
 
-Builds are ad-hoc signed and **not Apple-notarized**. First-time MinerU setup downloads dependencies and models. See the [user guide](docs/USER-GUIDE.md) for installation, compatibility, and removal details.
+Builds are ad-hoc signed and **not Apple-notarized**. First-time MinerU setup downloads dependencies and models. See the [user guide](docs/EN/USER-GUIDE.md) for installation, compatibility, and removal details.
 
 ## Bring your app
 
 Add an existing project directory and startup command, or import a [`launcher.yaml`](examples/python-webapp/launcher.yaml). Flint handles the process lifecycle; no separate stop command is required.
 
-[Integration contract](docs/COMMAND-CONTRACT.md) · [Guide for coding agents](docs/AI-INTEGRATION.md) · [Node example](examples/node-webapp) · [Python/uv example](examples/python-webapp)
+[Integration contract](docs/EN/COMMAND-CONTRACT.md) · [Guide for coding agents](docs/EN/AI-INTEGRATION.md) · [Node example](docs/EN/NODE-EXAMPLE.md) · [Python/uv example](docs/EN/PYTHON-EXAMPLE.md)
 
-MinerU exposes an HTTP API, not MCP. Custom MCP support currently covers Streamable HTTP, not stdio or legacy SSE. Automatic port discovery and broader platform support are on the roadmap.
+MinerU exposes an HTTP API, not MCP. Custom MCP support currently covers Streamable HTTP, not stdio or legacy SSE.
 
 ## Develop and contribute
 
@@ -48,6 +48,6 @@ npm test
 npm run release:mac
 ```
 
-[Contributing](CONTRIBUTING.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](docs/VALIDATION.md) · [Changelog](CHANGELOG.md) · [Website development](docs/WEBSITE.md)
+[Contributing](docs/EN/CONTRIBUTING.md) · [Architecture](docs/EN/ARCHITECTURE.md) · [Validation](docs/EN/VALIDATION.md) · [Changelog](docs/EN/CHANGELOG.md) · [Website development](docs/EN/WEBSITE.md)
 
-Flint is [MIT licensed](LICENSE). Third-party software and models retain their respective licenses; see [third-party notices](THIRD-PARTY-NOTICES.md).
+Flint is [MIT licensed](LICENSE). Third-party software and models retain their respective licenses; see [third-party notices](docs/EN/THIRD-PARTY-NOTICES.md).

@@ -1,5 +1,7 @@
 # Project website
 
+[简体中文](../CN/WEBSITE.md)
+
 The Flint website lives in `website/` and publishes to <https://zihaopu.cn/Flint/> through GitHub Pages. It uses plain HTML, CSS, and JavaScript with no runtime dependencies, tracking, remote fonts, or backend.
 
 ## Local preview

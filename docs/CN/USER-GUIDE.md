@@ -1,15 +1,15 @@
 <div align="center">
-  <img src="../branding/app-icon.svg" width="104" alt="Flint logo" />
+  <img src="../../branding/app-icon.svg" width="104" alt="Flint logo" />
   <h1>Flint · 火石</h1>
   <p>点一下，让本地服务运行起来。</p>
   <p>A local service launcher with isolated installs and a macOS menu bar.</p>
 </div>
 
-[English](USER-GUIDE.md) | **简体中文**
+[English](../EN/USER-GUIDE.md)
 
 Flint 把命令行服务的安装、启动、端口配置和日志放到一个桌面应用里。首个内置配方是 MinerU；也可以添加已有的 HTTP API、MCP HTTP 服务或 Web App 启动命令。
 
-**当前版本：0.1.12 alpha · macOS Apple Silicon。** Windows、Linux 和 Intel Mac 尚未发布。Flint 使用 Tauri 2、Rust、React 和 TypeScript，源码采用 [MIT](../LICENSE)。
+**当前版本：0.1.12 alpha · macOS Apple Silicon。** Windows、Linux 和 Intel Mac 尚未发布。Flint 使用 Tauri 2、Rust、React 和 TypeScript，源码采用 [MIT](../../LICENSE)。
 
 ## 安装与使用
 
@@ -55,9 +55,9 @@ macOS 受管 MinerU 默认使用串行权重加载，避开已观察到的模型
 
 `${port}` 会替换为界面中的端口。程序本身需要支持该参数。Flint 通过中断信号停止服务，无需另写 stop command。不要使用 `nohup`、`&` 或自行 daemonize。
 
-也可导入 [`launcher.yaml` 0.2](../examples/node-webapp/launcher.yaml)，支持应用 ID/版本、结构化参数与环境变量、显式安装步骤；0.1 清单继续兼容。导入和保存不执行代码，有安装步骤时点击「安装项目依赖」，全部成功后才能启动。自定义服务使用已有项目目录，项目内的 node_modules/.venv 不由 Flint 卸载。
+也可导入 [`launcher.yaml` 0.2](../../examples/node-webapp/launcher.yaml)，支持应用 ID/版本、结构化参数与环境变量、显式安装步骤；0.1 清单继续兼容。导入和保存不执行代码，有安装步骤时点击「安装项目依赖」，全部成功后才能启动。自定义服务使用已有项目目录，项目内的 node_modules/.venv 不由 Flint 卸载。
 
-开发者参考：[接入规范](COMMAND-CONTRACT.md) · [给 AI 的任务说明](AI-INTEGRATION.md) · [JSON Schema](../schema/launcher.schema.json) · [Node 示例](../examples/node-webapp/README.md) · [Python/uv 示例](../examples/python-webapp/README.md)。`npm run manifest:check -- /path/to/launcher.yaml` 可只校验清单。MCP 支持范围为 Streamable HTTP 初始化探测，暂不支持 stdio、旧式 SSE 或带鉴权的探测配置。
+开发者参考：[接入规范](COMMAND-CONTRACT.md) · [给 AI 的任务说明](AI-INTEGRATION.md) · [JSON Schema](../../schema/launcher.schema.json) · [Node 示例](NODE-EXAMPLE.md) · [Python/uv 示例](PYTHON-EXAMPLE.md)。`npm run manifest:check -- /path/to/launcher.yaml` 可只校验清单。MCP 支持范围为 Streamable HTTP 初始化探测，暂不支持 stdio、旧式 SSE 或带鉴权的探测配置。
 
 ## 开发
 
@@ -88,10 +88,10 @@ npm run release:mac  # 构建 .app，打包 DMG / ZIP 和校验文件
 
 macOS 数据目录为 `~/Library/Application Support/local.flint.services/`。应用、模型、配置、缓存和日志保存在这里，替换应用程序不会删除这些内容。详情见[架构与数据](ARCHITECTURE.md)。
 
-## 状态与计划
+## 当前支持范围
 
 已包含：内置 MinerU 多版本安装、隔离环境、启停与端口、HTTP/MCP HTTP 健康检查、自定义命令、日志、菜单栏控制。应用市场目前是随包维护的配方列表。
 
-后续计划：更多经过验证的服务配方、AI 辅助配方适配、Web App 专门流程、自动端口发现、其他桌面平台。尚不支持开机启动、自动重启、应用内更新、多服务编排、任意 GitHub Release 自动安装。
+尚不支持开机启动、自动重启、应用内更新、多服务编排、任意 GitHub Release 自动安装。
 
-[验证范围](VALIDATION.md) · [发布记录](../CHANGELOG.md) · [贡献指南](../CONTRIBUTING.md) · [第三方声明](../THIRD-PARTY-NOTICES.md)
+[验证范围](VALIDATION.md) · [发布记录](CHANGELOG.md) · [贡献指南](CONTRIBUTING.md) · [第三方声明](THIRD-PARTY-NOTICES.md)

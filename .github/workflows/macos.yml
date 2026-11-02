@@ -60,6 +60,6 @@ jobs:
           if gh release view "$TAG" --json isDraft --jq .isDraft > /tmp/is-draft; then
             test "$(cat /tmp/is-draft)" = true || { echo 'Refusing to modify an already published release'; exit 1; }
           else
-            gh release create "$TAG" --verify-tag --draft --prerelease --title "Flint $TAG" --notes-file docs/RELEASE-NOTES.md
+            gh release create "$TAG" --verify-tag --draft --prerelease --title "Flint $TAG" --notes-file docs/EN/RELEASE-NOTES.md
           fi
           gh release upload "$TAG" release-assets/* --clobber

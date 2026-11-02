@@ -64,7 +64,7 @@ def main():
         for extension in ("zip", "dmg"):
             shutil.copy2(temporary / f"{stem}.{extension}", destination / f"{stem}.{extension}")
     shutil.copy2(ROOT / "LICENSE", destination / "LICENSE")
-    shutil.copy2(ROOT / "docs/RELEASE-NOTES.md", destination / "RELEASE-NOTES.md")
+    shutil.copy2(ROOT / "docs/EN/RELEASE-NOTES.md", destination / "RELEASE-NOTES.md")
     build_info = {"version": version, "platform": "macos-arm64", "minimumSystemVersion": info.get("LSMinimumSystemVersion"),
                   "signing": args.signing, "notarization": "not verified by this script",
                   "uv": json.loads((ROOT / "scripts/uv.lock.json").read_text()),

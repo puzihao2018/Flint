@@ -1,6 +1,8 @@
 # 给 AI：为项目提供 Flint 接入
 
-目标客户端：Flint 0.1.9+，清单规范 0.2。本文件可直接交给代码生成 AI；完整定义见 [COMMAND-CONTRACT.md](COMMAND-CONTRACT.md)，机器可读结构见 [launcher.schema.json](../schema/launcher.schema.json)。
+[English](../EN/AI-INTEGRATION.md)
+
+目标客户端：Flint 0.1.9+，清单规范 0.2。本文件可直接交给代码生成 AI；完整定义见 [COMMAND-CONTRACT.md](COMMAND-CONTRACT.md)，机器可读结构见 [launcher.schema.json](../../schema/launcher.schema.json)。
 
 ## 可直接复制的任务指令
 
@@ -69,4 +71,4 @@ install:
 - `existing` 的 node_modules/.venv/模型归项目所有，删除 Flint 登记不会移除它们。
 - 每次导入新增实例，修改清单不会同步旧实例；更新演示时处理好旧实例，避免端口重复。
 
-仓库校验命令：`npm run manifest:check -- /absolute/path/to/launcher.yaml`。该工具只校验，不接管运行中的 Flint。实际项目模板见 [Node](../examples/node-webapp/README.md) 和 [Python](../examples/python-webapp/README.md)。
+仓库校验命令：`npm run manifest:check -- /absolute/path/to/launcher.yaml`。该工具只校验，不接管运行中的 Flint。实际项目模板见 [Node](NODE-EXAMPLE.md) 和 [Python](PYTHON-EXAMPLE.md)。
