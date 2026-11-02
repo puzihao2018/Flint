@@ -4,7 +4,7 @@ const zh = {
   alpha: "macOS 测试版 · Apple Silicon",
   heroTitle: "启动和管理<br><em>本地服务。</em>",
   heroDescription:
-    "在独立环境中安装 MinerU，从 Mac 菜单栏启停 Web App、HTTP API 和 MCP 服务。",
+    "从 Mac 菜单栏启停 Web App、HTTP API 和 MCP 服务，在 Flint 中设置端口、查看日志。",
   getFlint: "获取 Mac 版 Flint",
   previewHeading: "你的本地工作空间",
   demoLabel: "交互演示",
