@@ -13,7 +13,7 @@ Flint 把命令行服务的安装、启动、端口配置和日志放到一个�
 
 ## 安装与使用
 
-1. 正式标签版本发布前，从成功的 [macOS Actions 构建](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml) 下载 `Flint-macOS-arm64` 附件（需登录 GitHub）。解压附件，打开其中的 DMG 并将 Flint 拖入 Applications；也可使用附件中的应用 ZIP。标签版本将发布到 [Releases](https://github.com/puzihao2018/Flint/releases)。
+1. [下载 macOS DMG](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg)，打开后将 Flint 拖入「应用程序」。ZIP 与 SHA-256 校验文件见[发布页](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12)。
 2. 打开 Flint，在「应用市场 → MinerU」选择版本并部署。首次部署需要网络下载 Python、依赖和模型，耗时和磁盘占用取决于配置。
 3. 打开启动开关，等待检查通过，复制服务地址给需要它的客户端。
 4. 改端口时先停止服务，修改并保存，再启动。

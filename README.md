@@ -25,7 +25,7 @@
 
 **macOS 13+ · Apple Silicon · alpha.** Windows, Linux, and Intel Mac builds are not available yet.
 
-Until a tagged release is published, download **Flint-macOS-arm64** from a successful [Actions run](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml) (GitHub sign-in required). Extract the artifact, open its DMG, and drag Flint into Applications. Tagged packages will appear in [Releases](https://github.com/puzihao2018/Flint/releases).
+[Download Flint 0.1.12 for macOS (DMG)](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg). Open the DMG and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12) includes the ZIP and SHA-256 checksums.
 
 Builds are ad-hoc signed and **not Apple-notarized**. First-time MinerU setup downloads dependencies and models. See the [user guide](docs/USER-GUIDE.md) for installation, compatibility, and removal details.
 

@@ -36,9 +36,9 @@ const zh = {
   copied: "已复制",
   copyFailed: "复制失败，请选中文本复制",
   downloadTitle: "安装 Flint",
-  downloadBuild: "获取安装包",
+  downloadBuild: "下载 Mac 版",
   downloadNote:
-    "登录 GitHub，从一次成功的构建中下载 Flint-macOS-arm64。解压后打开 DMG，把 Flint 拖入「应用程序」。",
+    "打开 DMG，把 Flint 拖入「应用程序」。",
   installationGuide: "使用指南",
   issues: "问题反馈",
   changelog: "更新记录",

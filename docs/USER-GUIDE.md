@@ -12,7 +12,7 @@ Flint brings installation, startup, port configuration, and logs for command-lin
 
 ## Installation and usage
 
-1. Until a tagged release is published, download the `Flint-macOS-arm64` artifact from a successful [macOS Actions run](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml) (GitHub sign-in required). Extract the artifact, open its DMG, and drag Flint into Applications. The ZIP inside the artifact is an alternative app bundle. Tagged builds will be available under [Releases](https://github.com/puzihao2018/Flint/releases).
+1. [Download the macOS DMG](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg), open it, and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12) includes a ZIP and SHA-256 checksums.
 2. Open Flint, go to **App market → MinerU**, choose a version, and install it. The first installation downloads Python, dependencies, and models; time and disk usage depend on the configuration.
 3. Turn on the service, wait for its checks to pass, and copy its address into your client.
 4. To change a port, stop the service, edit and save the port, then start it again.

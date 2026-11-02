@@ -20,7 +20,7 @@ Open `http://127.0.0.1:4173`. The build checks local assets, anchor targets, dup
 
 The preview is explicitly a simulation. It does not connect to localhost services or present simulated status as a real service check. Keep supported features and planned work separate. No invented metrics, testimonials, star counts, or supported integrations.
 
-The download CTA currently points to Actions artifacts, because no tagged release exists. Artifacts require a GitHub login. Once a real public release is published, update both languages and both READMEs to point to its release page; don't advertise a direct download before the asset exists. The website version is displayed in `index.html`.
+The download button links to the DMG attached to the tagged GitHub release. When publishing a new version, update the version and asset URL in the website, both READMEs, and both user guides.
 
 ## Deployment
 

@@ -25,7 +25,7 @@
 
 **macOS 13+ · Apple Silicon · alpha。** Windows、Linux 和 Intel Mac 暂未提供。
 
-标签版本发布前，从成功的 [Actions 构建](https://github.com/puzihao2018/Flint/actions/workflows/macos.yml) 下载 **Flint-macOS-arm64**（需登录 GitHub）。解压附件，打开其中的 DMG，将 Flint 拖入 Applications。标签安装包后续会发布到 [Releases](https://github.com/puzihao2018/Flint/releases)。
+[下载 Flint 0.1.12（macOS DMG）](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg)，打开后将 Flint 拖入「应用程序」。ZIP 和 SHA-256 校验文件见[发布页](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12)。
 
 安装包采用 ad-hoc 签名，**尚未经过 Apple 公证**。首次部署 MinerU 需要下载依赖和模型。安装、兼容性与卸载说明见[使用指南](docs/USER-GUIDE_CN.md)。
 
