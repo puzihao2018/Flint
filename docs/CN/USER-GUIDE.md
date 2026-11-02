@@ -9,11 +9,13 @@
 
 Flint 把命令行服务的安装、启动、端口配置和日志放到一个桌面应用里。首个内置配方是 MinerU；也可以添加已有的 HTTP API、MCP HTTP 服务或 Web App 启动命令。
 
-**当前版本：0.1.12 alpha · macOS Apple Silicon。** Windows、Linux 和 Intel Mac 尚未发布。Flint 使用 Tauri 2、Rust、React 和 TypeScript，源码采用 [MIT](../../LICENSE)。
+**当前版本：0.1.13 alpha · macOS Apple Silicon。** Windows、Linux 和 Intel Mac 尚未发布。Flint 使用 Tauri 2、Rust、React 和 TypeScript，源码采用 [MIT](../../LICENSE)。
 
 ## 安装与使用
 
-1. [下载 macOS DMG](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg)，打开后将 Flint 拖入「应用程序」。ZIP 与 SHA-256 校验文件见[发布页](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12)。
+Flint 面向希望通过图形界面托管服务的用户。对于提供清单的项目，可以直接导入、按需安装依赖并启动，无需编写代码。当前 macOS 版通过 DMG 安装，Windows 版的交付要求是可双击安装的 EXE 或 MSI。Windows 安装包尚未发布。
+
+1. [下载 macOS DMG](https://github.com/puzihao2018/Flint/releases/download/v0.1.13/Flint-0.1.13-macOS-arm64.dmg)，打开后将 Flint 拖入「应用程序」。ZIP 与 SHA-256 校验文件见[发布页](https://github.com/puzihao2018/Flint/releases/tag/v0.1.13)。
 2. 打开 Flint，在「应用市场 → MinerU」选择版本并部署。首次部署需要网络下载 Python、依赖和模型，耗时和磁盘占用取决于配置。
 3. 打开启动开关，等待检查通过，复制服务地址给需要它的客户端。
 4. 改端口时先停止服务，修改并保存，再启动。
@@ -70,7 +72,7 @@ npm test             # 运行本地化检查和串行 Rust 测试
 npm run release:mac  # 构建 .app，打包 DMG / ZIP 和校验文件
 ```
 
-打包产物位于 `release/0.1.12/`，不会提交到 Git。`uv` 从官方固定 Release 下载，并验证压缩包及二进制 SHA-256；不要求用户预先安装 Python 或 uv，不向源码仓库提交 uv 二进制。`Cargo.lock`、`package-lock.json` 和各 MinerU 依赖锁随源码提交。
+打包产物位于 `release/0.1.13/`，不会提交到 Git。`uv` 从官方固定 Release 下载，并验证压缩包及二进制 SHA-256；不要求用户预先安装 Python 或 uv，不向源码仓库提交 uv 二进制。`Cargo.lock`、`package-lock.json` 和各 MinerU 依赖锁随源码提交。
 
 开发测试请使用独立目录，例如 `FLINT_DATA_DIR=/tmp/flint-dev npm run desktop`。安装版运行时不要让第二个实例或 headless 验证器写同一个数据目录；不同开发数据目录仍共享同一应用标识的单实例限制。
 

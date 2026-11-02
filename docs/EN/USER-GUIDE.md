@@ -8,11 +8,13 @@
 
 Flint brings installation, startup, port configuration, and logs for command-line services into a desktop app. MinerU is the first built-in recipe. You can also add startup commands for existing HTTP APIs, MCP HTTP servers, and web apps.
 
-**Current version: 0.1.12 alpha · macOS Apple Silicon.** Windows, Linux, and Intel Mac builds have not been released. Flint uses Tauri 2, Rust, React, and TypeScript and is licensed under [MIT](../../LICENSE).
+**Current version: 0.1.13 alpha · macOS Apple Silicon.** Windows, Linux, and Intel Mac builds have not been released. Flint uses Tauri 2, Rust, React, and TypeScript and is licensed under [MIT](../../LICENSE).
 
 ## Installation and usage
 
-1. [Download the macOS DMG](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg), open it, and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12) includes a ZIP and SHA-256 checksums.
+Flint is designed for people who want to host services through a graphical interface. When a project supplies a manifest, import it, install any declared dependencies, and start it without writing code. The macOS release ships as a DMG. Windows distribution calls for a double-clickable EXE or MSI installer. A Windows installer is not available yet.
+
+1. [Download the macOS DMG](https://github.com/puzihao2018/Flint/releases/download/v0.1.13/Flint-0.1.13-macOS-arm64.dmg), open it, and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.13) includes a ZIP and SHA-256 checksums.
 2. Open Flint, go to **App market → MinerU**, choose a version, and install it. The first installation downloads Python, dependencies, and models; time and disk usage depend on the configuration.
 3. Turn on the service, wait for its checks to pass, and copy its address into your client.
 4. To change a port, stop the service, edit and save the port, then start it again.
@@ -73,7 +75,7 @@ npm test             # Run localization checks and serial Rust tests
 npm run release:mac  # Build the app, DMG, ZIP, and checksum files
 ```
 
-Build artifacts go into `release/0.1.12/` and are not committed to Git. `uv` is downloaded from a pinned official release, with SHA-256 checks for both its archive and binary. End users do not need to install Python or uv in advance, and the uv binary is not committed to the source repository. `Cargo.lock`, `package-lock.json`, and the MinerU dependency locks are committed.
+Build artifacts go into `release/0.1.13/` and are not committed to Git. `uv` is downloaded from a pinned official release, with SHA-256 checks for both its archive and binary. End users do not need to install Python or uv in advance, and the uv binary is not committed to the source repository. `Cargo.lock`, `package-lock.json`, and the MinerU dependency locks are committed.
 
 Use a separate data directory for development, for example `FLINT_DATA_DIR=/tmp/flint-dev npm run desktop`. Do not let a second instance or headless validator write to the installed app's data directory while it is running. Separate development data directories still share the single-instance restriction associated with the same application identifier.
 

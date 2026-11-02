@@ -3386,7 +3386,7 @@ dependencies = [
 
 [[package]]
 name = "service-launcher"
-version = "0.1.12"
+version = "0.1.13"
 dependencies = [
  "libc",
  "open",

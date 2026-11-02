@@ -1,8 +1,7 @@
 <div align="center">
   <img src="../../branding/app-icon.svg" width="88" alt="Flint" />
   <h1>Flint</h1>
-  <p>让本地服务，有一个自己的家。</p>
-  <p>安装 MinerU，启动 Web App，在菜单栏管理 HTTP 与 MCP 服务。</p>
+  <p>在自己的电脑上托管 Web 应用和 HTTP 服务。导入项目提供的 launcher.yaml，就能在 Flint 里一键启停。</p>
   <p><a href="https://zihaopu.cn/Flint/?lang=zh-CN">项目网站</a> · <a href="USER-GUIDE.md">使用指南</a> · <a href="AI-INTEGRATION.md">接入 Flint</a></p>
 </div>
 
@@ -25,7 +24,7 @@
 
 **macOS 13+ · Apple Silicon · alpha。** Windows、Linux 和 Intel Mac 暂未提供。
 
-[下载 Flint 0.1.12（macOS DMG）](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg)，打开后将 Flint 拖入「应用程序」。ZIP 和 SHA-256 校验文件见[发布页](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12)。
+[下载 Flint 0.1.13（macOS DMG）](https://github.com/puzihao2018/Flint/releases/download/v0.1.13/Flint-0.1.13-macOS-arm64.dmg)，打开后将 Flint 拖入「应用程序」。ZIP 和 SHA-256 校验文件见[发布页](https://github.com/puzihao2018/Flint/releases/tag/v0.1.13)。
 
 安装包采用 ad-hoc 签名，**尚未经过 Apple 公证**。首次部署 MinerU 需要下载依赖和模型。安装、兼容性与卸载说明见[使用指南](USER-GUIDE.md)。
 

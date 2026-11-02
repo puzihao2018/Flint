@@ -238,15 +238,17 @@ h3 {
   align-items: center;
   gap: 18px;
 }
+.app-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
 .service-heading .app-icon {
   height: 62px;
   width: 62px;
   border-radius: 15px;
   background: #e9eddf;
-  display: grid;
-  place-items: center;
   color: #4d6650;
-  flex-shrink: 0;
 }
 .app-icon.mineru {
   background: #ecdda9;

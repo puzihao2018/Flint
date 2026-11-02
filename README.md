@@ -1,8 +1,7 @@
 <div align="center">
   <img src="branding/app-icon.svg" width="88" alt="Flint" />
   <h1>Flint</h1>
-  <p>A home for your local services.</p>
-  <p>Install MinerU. Launch web apps. Manage HTTP and MCP servers from your menu bar.</p>
+  <p>Host web apps and HTTP services on your computer. Import a launcher.yaml, then start and stop the service from Flint.</p>
   <p><a href="https://zihaopu.cn/Flint/?lang=en">Website</a> · <a href="docs/EN/USER-GUIDE.md">User guide</a> · <a href="docs/EN/AI-INTEGRATION.md">Build for Flint</a></p>
 </div>
 
@@ -25,7 +24,7 @@
 
 **macOS 13+ · Apple Silicon · alpha.** Windows, Linux, and Intel Mac builds are not available yet.
 
-[Download Flint 0.1.12 for macOS (DMG)](https://github.com/puzihao2018/Flint/releases/download/v0.1.12/Flint-0.1.12-macOS-arm64.dmg). Open the DMG and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.12) includes the ZIP and SHA-256 checksums.
+[Download Flint 0.1.13 for macOS (DMG)](https://github.com/puzihao2018/Flint/releases/download/v0.1.13/Flint-0.1.13-macOS-arm64.dmg). Open the DMG and drag Flint into Applications. The [release page](https://github.com/puzihao2018/Flint/releases/tag/v0.1.13) includes the ZIP and SHA-256 checksums.
 
 Builds are ad-hoc signed and **not Apple-notarized**. First-time MinerU setup downloads dependencies and models. See the [user guide](docs/EN/USER-GUIDE.md) for installation, compatibility, and removal details.
 

@@ -12,7 +12,7 @@ On a clean checkout, install Xcode Command Line Tools, Python 3.9+, Node 24, and
 npm ci
 npm test
 npm run release:mac
-cd release/0.1.12
+cd release/0.1.13
 shasum -a 256 -c SHA256SUMS.txt
 ```
 
@@ -28,7 +28,7 @@ The default signature is ad hoc. Disclose the absence of Apple Developer ID nota
 
 1. Verify the repository, owner, visibility, and main CI result.
 2. Match versions across package.json, package-lock.json, Cargo.toml, Cargo.lock, and tauri.conf.json. Update both languages of the changelog and release notes.
-3. Create and push the matching tag, for example v0.1.12.
+3. Create and push the matching tag, for example v0.1.13.
 4. Inspect the draft assets, verify the packages and checksums, and publish the prerelease.
 
 The workflow rejects mismatched tags and refuses to overwrite a public release. GitHub's source archives omit uv and models. The build fetches uv with a pinned checksum. See [GitHub-hosted runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).

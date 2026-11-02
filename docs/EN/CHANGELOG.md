@@ -2,6 +2,10 @@
 
 [简体中文](../CN/CHANGELOG.md)
 
+## 0.1.13 — 2026-11-02
+
+Fixed the alignment of service icons in the menu bar panel, including the MinerU “M”.
+
 ## 0.1.12 — 2026-10-30
 Removed promotional subtitles, decorative labels, and duplicate hints. Pages now use functional titles and retain configuration, status, errors, and actions.
 
