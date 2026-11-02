@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate and copy the dependency-free GitHub Pages site into dist-site/."""
+from hashlib import sha256
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -54,8 +55,12 @@ assert set(page.keys) <= zh_keys, f'Missing Chinese strings: {set(page.keys) - z
 if DESTINATION.exists():
     shutil.rmtree(DESTINATION)
 DESTINATION.mkdir()
-for name in ('index.html', 'style.css', 'site.js'):
+html = (SOURCE / 'index.html').read_text()
+for name in ('style.css', 'site.js'):
     shutil.copy2(SOURCE / name, DESTINATION / name)
+    digest = sha256((SOURCE / name).read_bytes()).hexdigest()[:12]
+    html = html.replace(f'"{name}"', f'"{name}?v={digest}"')
+(DESTINATION / 'index.html').write_text(html)
 shutil.copytree(SOURCE / 'assets', DESTINATION / 'assets')
 (DESTINATION / '.nojekyll').touch()
 (DESTINATION / 'launcher-example.yaml').write_text(page.manifest + '\n')
