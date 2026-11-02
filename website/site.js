@@ -1,14 +1,11 @@
 const zh = {
   skip: "跳到正文",
-  navFeatures: "功能",
   navDevelopers: "开发者",
   alpha: "macOS 测试版 · Apple Silicon",
-  heroTitle: "让本地服务，<br>有一个<em>自己的家。</em>",
+  heroTitle: "启动和管理<br><em>本地服务。</em>",
   heroDescription:
-    "安装 MinerU，启动你的 Web App，随时管理后台服务。不必再到终端窗口里逐个寻找。",
+    "在独立环境中安装 MinerU，从 Mac 菜单栏启停 Web App、HTTP API 和 MCP 服务。",
   getFlint: "获取 Mac 版 Flint",
-  viewSource: "查看源码",
-  heroMeta: "MIT 许可证，在你的电脑上运行。",
   previewHeading: "你的本地工作空间",
   demoLabel: "交互演示",
   services: "我的服务",
@@ -30,74 +27,23 @@ const zh = {
   menuBar: "菜单栏",
   trayNote: "关闭主窗口，服务继续运行。",
   demoCaption: "试试开关。此演示不会启动真实服务。",
-  builtFor: "为本地工作而造",
-  everyday: "日常管理",
-  featuresTitle: "少管理几个终端，<br><em>多做一点创造。</em>",
-  featureInstall: "每个版本，各有其位。",
-  featureInstallBody:
-    "在独立环境中安装 MinerU 4.0 或 4.1。依赖、模型和端口分别管理，无需修改系统 Python。",
-  featureInstallDetail: "多版本安装 · 独立运行环境",
-  featureControl: "运行状态，一目了然。",
-  featureControlBody:
-    "启动、停止、修改端口，查看健康检查和运行日志。无需为每个服务再记一条停止命令。",
-  featureControlDetail: "进程控制 · 健康检查 · 日志",
-  featureTray: "关掉窗口，随时掌控。",
-  featureTrayBody:
-    "服务运行时，Flint 可以只留在 macOS 菜单栏。需要时打开快捷面板，用完便回到你的工作。",
-  tryTray: "试试菜单栏演示",
-  yourProject: "也支持你的项目",
-  developerTitle: "一个小文件，<br><em>让启动更简单。</em>",
+  developerTitle: "接入你的项目",
   developerBody:
-    "继续使用熟悉的开发工具。添加一个 launcher.yaml，描述项目如何安装、启动，以及如何检查服务状态。",
-  developerAI:
-    "把接入指南交给编程 AI，让下一个 Web App 从创建之初就支持 Flint。",
+    "填写项目目录和启动命令，或用 launcher.yaml 分享安装步骤、端口和健康检查设置。",
   aiGuide: "给 AI 的接入指南",
-  spec: "阅读接入规范",
   examples: "查看示例项目",
   copy: "复制",
   copied: "已复制",
   copyFailed: "复制失败，请选中文本复制",
-  codeNote: "适用于 Python/uv 示例项目，使用项目已有目录。",
-  getStarted: "开始使用",
-  downloadTitle: "为下一个想法，<br><em>留好位置。</em>",
-  downloadPlatform: "macOS 13+ · Apple Silicon",
-  downloadBuild: "获取 macOS 构建",
+  downloadTitle: "安装 Flint",
+  downloadBuild: "获取安装包",
   downloadNote:
-    "打开一次成功的构建，在 Artifacts 中下载 Flint-macOS-arm64。需要登录 GitHub。",
-  browseReleases: "查看 Releases",
-  step1: "安装 Flint",
-  step1Body: "解压构建附件，打开其中的 DMG，将 Flint 拖入 Applications。",
-  step2: "添加你需要的服务",
-  step2Body:
-    "从应用市场选择 MinerU 版本，导入 launcher.yaml，或填写已有项目的启动命令。",
-  step3: "打开启动开关",
-  step3Body: "等待健康检查通过，将服务地址用于浏览器或需要它的客户端。",
-  installationGuide: "完整安装指南",
-  alphaNote:
-    "早期测试版。安装包采用 ad-hoc 签名，尚未经过 Apple 公证。首次安装 MinerU 需要下载依赖和模型。",
-  platformNote:
-    "Windows、Linux、Intel Mac 和端口自动发现仍在计划中，尚未提供。",
-  faqTitle: "你可能还想知道。",
-  faq1: "MinerU 是 MCP server 吗？",
-  faq1Body:
-    "不是。内置 MinerU 配方提供 HTTP API。Flint 也支持使用 Streamable HTTP 的自定义 MCP 服务，目前不支持 MCP stdio 和旧版 SSE。",
-  faq2: "我的项目必须使用专门的启动器吗？",
-  faq2Body:
-    "不用。可以直接添加前台启动命令与已有项目目录。launcher.yaml 让安装步骤、启动参数和健康检查更容易分享。程序本身需要真正支持配置的端口。",
-  faq3: "删除服务时会删掉哪些文件？",
-  faq3Body:
-    "你可以只删除登记，也可以选择卸载受管环境、模型及服务数据。Flint 会保留外部项目目录和共享缓存。选中的受管文件会直接删除，不进入废纸篓。",
-  faq4: "可以贡献新的应用适配吗？",
-  faq4Body:
-    "可以。先提交 Issue，说明应用和目标平台，并提供官方来源、固定版本、安装与启动命令和有效的健康检查。配方需要实际通过安装与启停测试，才能标记为已支持。",
-  openDevelopment: "开放开发",
-  communityTitle: "轻巧的工具，<br><em>一起慢慢完善。</em>",
-  communityBody:
-    "Flint 使用 MIT 许可证，以 Tauri、Rust 和 React 构建。查看路线图、反馈问题，或帮助更多服务接入 Flint。",
-  contribute: "在 GitHub 上参与",
-  roadmap: "查看路线图",
+    "登录 GitHub，从一次成功的构建中下载 Flint-macOS-arm64。解压后打开 DMG，把 Flint 拖入「应用程序」。",
+  installationGuide: "使用指南",
   issues: "问题反馈",
   changelog: "更新记录",
+  navInstall: "安装",
+  exampleTitle: "Python 示例 · launcher.yaml",
 };
 const nodes = [...document.querySelectorAll("[data-i18n], [data-i18n-html]")];
 const en = Object.fromEntries(
@@ -197,7 +143,7 @@ function setLanguage(language) {
   document.title =
     locale === "zh-CN"
       ? "Flint — 本地服务启动器"
-      : "Flint — A home for your local services";
+      : "Flint — Local service launcher";
   nodes.forEach((node) => {
     const key = node.dataset.i18n || node.dataset.i18nHtml;
     if (node.dataset.i18nHtml) node.innerHTML = t(key);
@@ -263,22 +209,11 @@ function setTray(open) {
 $("tray-toggle").addEventListener("click", () =>
   setTray($("tray-preview").hidden),
 );
-$("show-tray").addEventListener("click", () => {
-  setTray(true);
-  $("tray-toggle").scrollIntoView({
-    block: "center",
-    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "instant"
-      : "smooth",
-  });
-  $("tray-toggle").focus({ preventScroll: true });
-});
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setTray(false);
 });
 document.addEventListener("click", (event) => {
-  if (!event.target.closest("#tray-preview, #tray-toggle, #show-tray"))
-    setTray(false);
+  if (!event.target.closest("#tray-preview, #tray-toggle")) setTray(false);
 });
 $("copy-manifest").addEventListener("click", async () => {
   try {
